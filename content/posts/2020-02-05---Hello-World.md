@@ -3,8 +3,8 @@ title: Hello-World
 date: "2020-02-05T23:15:32.169Z"
 template: "post"
 draft: false
-slug: "hello_world_gatsby"
-category: "Typography"
+slug: "2020_02_05"
+category: "Daily"
 tags:
   - "hello_world"
   - "gatsby"
