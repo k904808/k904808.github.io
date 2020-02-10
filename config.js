@@ -16,28 +16,28 @@ module.exports = {
       path: '/'
     },
     {
-      label: 'About me',
-      path: '/pages/about'
+      label: '',
+      path: ''
     },
     {
-      label: 'Contact me',
-      path: '/pages/contacts'
+      label: '',
+      path: ''
     }
   ],
   author: {
     name: 'Kay',
     photo: '/photo.jpg',
-    bio: ':) :)',
+    bio: '',
     contacts: {
       email: '',
-      facebook: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
+      facebook: '',
+      telegram: '',
+      twitter: '',
+      github: '/k904808',
       rss: '',
       vkontakte: '',
-      linkedin: '#',
-      instagram: '#',
+      linkedin: '',
+      instagram: '',
       line: '',
       gitlab: '',
       weibo: '',
