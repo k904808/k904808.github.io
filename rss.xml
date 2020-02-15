@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kay Log]]></title><description><![CDATA[:)]]></description><link>https://k904808.github.io/</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 14 Feb 2020 14:04:32 GMT</lastBuildDate><item><title><![CDATA[인증(Authentication) & 인가(Authorization)-1]]></title><description><![CDATA[인증(Authentication) & 인가(Authorization)-1]]></description><link>https://k904808.github.io//posts/2020_02_13</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_13</guid><pubDate>Thu, 13 Feb 2020 23:51:33 GMT</pubDate><content:encoded>&lt;p&gt;인증(Authentication)
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kay Log]]></title><description><![CDATA[:)]]></description><link>https://k904808.github.io/</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 15 Feb 2020 15:56:29 GMT</lastBuildDate><item><title><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></title><description><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></description><link>https://k904808.github.io//posts/2020_02_14</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_14</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;JWT(JSON Web Tokens)
+유저가 로그인에 성공하면 access token 이라는 암호화된 유저 정보를 첨부해서 request를 보낸다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    &amp;quot;access_token&amp;quot;: &amp;quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6MSwiaWF0IjoxNDQ0OTE3NjQwLCJuYmYiOjE0NDQ5MTc2NDAsImV4cCI6MTQ0NDkxNzk0MH0.KPmI6WSjRjlpzecPvs3q_T3cJQvAgJvaQAPtk1abC_E&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;서버에서는 access token을 복호화해서 해당 유저정보를 얻게된다.&lt;br&gt;
+이러한 절차의 목적은 해당 유저가 요청할 때마다 로그인하지 않아도 되도록 하는 것.&lt;br&gt;
+access token을 생성하는 방법은 여러가지가 있는데, 그중 이번에 다루는 것은 JWT이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import jwt
+&amp;gt;&amp;gt;&amp;gt; jwt.encode({&amp;#39;user_id&amp;#39;: 1}, &amp;#39;wecode&amp;#39;, algorithm = &amp;#39;HS256&amp;#39;)
+b&amp;#39;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.DHk2kqJnk-mJg-7xcN4NwkaFJRUh01K3vY2V6g8o3bE&amp;#39;
+&amp;gt;&amp;gt;&amp;gt; token = jwt.encode({&amp;#39;user_id&amp;#39;: 1}, &amp;#39;wecode&amp;#39;, algorithm = &amp;#39;HS256&amp;#39;)
+&amp;gt;&amp;gt;&amp;gt; jwt.decode(token, &amp;#39;wecode&amp;#39;, algorithm = &amp;#39;HS256&amp;#39;)
+{&amp;#39;user_id&amp;#39;: 1}
+&amp;gt;&amp;gt;&amp;gt; token = jwt.encode({&amp;#39;user_id&amp;#39;: 1}, &amp;#39;wecode&amp;#39;, algorithm = &amp;#39;HS512&amp;#39;)
+&amp;gt;&amp;gt;&amp;gt; print(token)
+b&amp;#39;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxfQ.ZacrrpzNICXDuHinVYF6aPT5QjaH_zAbH7ihSSUDrMwCUBd1FdxLql5CFWSXt5BNC6P4APTUn-0BrDUowoSqjw&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[인증(Authentication) & 인가(Authorization)-1]]></title><description><![CDATA[인증(Authentication) & 인가(Authorization)-1]]></description><link>https://k904808.github.io//posts/2020_02_13</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_13</guid><pubDate>Thu, 13 Feb 2020 23:51:33 GMT</pubDate><content:encoded>&lt;p&gt;인증(Authentication)
 유저의 아이디와 패스워드를 확인하는 절차.&lt;/p&gt;
 &lt;p&gt;-회원가입
 유저 아이디와 패스워드 생성
