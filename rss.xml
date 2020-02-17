@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kay Log]]></title><description><![CDATA[:)]]></description><link>https://k904808.github.io/</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 15 Feb 2020 15:56:29 GMT</lastBuildDate><item><title><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></title><description><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></description><link>https://k904808.github.io//posts/2020_02_14</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_14</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;JWT(JSON Web Tokens)
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kay Log]]></title><description><![CDATA[:)]]></description><link>https://k904808.github.io/</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Feb 2020 12:46:40 GMT</lastBuildDate><item><title><![CDATA[HTTP 기초]]></title><description><![CDATA[HTTP 기초]]></description><link>https://k904808.github.io//posts/2020_02_15</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_15</guid><pubDate>Sat, 15 Feb 2020 21:39:10 GMT</pubDate><content:encoded>&lt;h2 id=&quot;httphyper-text-transfer-protocol&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#httphyper-text-transfer-protocol&quot; aria-label=&quot;httphyper text transfer protocol permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTTP(Hyper Text Transfer Protocol)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML 문서를 교환하기 위해 만들어진 통신규약(protocol)&lt;/li&gt;
+&lt;li&gt;프론트엔드 서버와 클라이언트 사이의 통신에 사용&lt;/li&gt;
+&lt;li&gt;백엔드 서버와 프론트엔드 서버 사이의 통신에도 사용&lt;/li&gt;
+&lt;li&gt;HTTP는 TCP/IP기반으로 되어있다.&lt;/li&gt;
+&lt;li&gt;HTTP 이외에도 TCP, FTP 와 같은 프로토콜이 있다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;http-핵심요소&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#http-%ED%95%B5%EC%8B%AC%EC%9A%94%EC%86%8C&quot; aria-label=&quot;http 핵심요소 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTTP 핵심요소&lt;/h2&gt;
+&lt;h3 id=&quot;--http-통신방식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#--http-%ED%86%B5%EC%8B%A0%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;  http 통신방식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;- HTTP 통신방식&lt;/h3&gt;
+&lt;p&gt;request(요청) - response(응답) 구조
+요청이 오면 응답할 뿐, 상태를 저장하지 않음.(Stateless) -&gt; 요청을 처리하기 위해 필요한 모든 정보를 요청에 담아 보내야함.
+각각의 요청/응답은 독립적이며 연결되어 있지 않다.
+때문에, 클라이언트가 요청을 보내고 응답을 받은 후, 다시 요청을 보낼 때 전에 보낸 요청/ 응답에 대해 알지 못함.
+여러 요청에/응답의 진행 과정이나 데이터가 필요한 경우에는 쿠키나 세션 등을 사용&lt;/p&gt;
+&lt;h3 id=&quot;--http-request-구조&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#--http-request-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;  http request 구조 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;- HTTP Request 구조&lt;/h3&gt;
+&lt;p&gt; &lt;strong&gt;Start Line&lt;/strong&gt; :  HTTP Method/ target/ Version(1.1을 가장 많이 씀 곧 3.0이 나올 예정이긴 함.)
+&lt;strong&gt;Headers&lt;/strong&gt; : Meta 데이터 (데이터를 설명해주기 위한 데이터, 요청에 대한 추가정보)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host
+요청이 전송되는 target의 host url: 예를 들어, google.com&lt;/li&gt;
+&lt;li&gt;User-Agent
+요청을 보내는 클라이언트의 대한 정보: 예를 들어, 웹브라우저에 대한 정보.&lt;/li&gt;
+&lt;li&gt;Accept
+해당 요청이 받을 수 있는 응답(response) 타입.&lt;/li&gt;
+&lt;li&gt;Connection
+해당 요청이 끝난후에 클라이언트와 서버가 계속해서 네트워크 컨넥션을 유지 할것인지 아니면 끊을것인지에 대해 지시하는 부분.&lt;/li&gt;
+&lt;li&gt;Content-Type
+해당 요청이 보내는 메세지 body의 타입. 예를 들어, JSON을 보내면 application/json.&lt;/li&gt;
+&lt;li&gt;Content-Length:
+메세지 body의 길이.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Body&lt;/strong&gt; : request의 실제 데이터 (메세지/ 내용)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;POST /payment-sync HTTP/1.1
+
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 83
+Content-Type: application/json
+Host: intropython.com
+User-Agent: HTTPie/0.9.3
+
+{
+    &amp;quot;imp_uid&amp;quot;: &amp;quot;imp_1234567890&amp;quot;,
+    &amp;quot;merchant_uid&amp;quot;: &amp;quot;order_id_8237352&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;paid&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;--http-response-구조&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#--http-response-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;  http response 구조 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;- HTTP Response 구조&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Status Line : response의 상태 (HTTP 버전 /Status code/ Status text)&lt;/li&gt;
+&lt;li&gt;Headers : Meta data (User-Agent 대신 Server 헤더가 사용됨)&lt;/li&gt;
+&lt;li&gt;Body : 실제 데이터&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HTTP/1.1 404 Not Found
+
+Connection: close
+Content-Length: 1573
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 20 Aug 2018 07:59:05 GMT
+
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=en&amp;gt;
+  &amp;lt;meta charset=utf-8&amp;gt;
+  &amp;lt;meta name=viewport content=&amp;quot;initial-scale=1, minimum-scale=1, width=device-width&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;Error 404 (Not Found)!!1&amp;lt;/title&amp;gt;
+  &amp;lt;style&amp;gt;
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* &amp;gt; body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  &amp;lt;/style&amp;gt;
+  &amp;lt;a href=//www.google.com/&amp;gt;&amp;lt;span id=logo aria-label=Google&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+  &amp;lt;p&amp;gt;&amp;lt;b&amp;gt;404.&amp;lt;/b&amp;gt; &amp;lt;ins&amp;gt;That’s an error.&amp;lt;/ins&amp;gt;
+  &amp;lt;p&amp;gt;The requested URL &amp;lt;code&amp;gt;/payment-sync&amp;lt;/code&amp;gt; was not found on this server.  &amp;lt;ins&amp;gt;That’s all we know.&amp;lt;/ins&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;✔️HTTP Method는 의도한 바&lt;/p&gt;
+&lt;h3 id=&quot;자주-쓰이는-http-methods&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EC%A3%BC-%EC%93%B0%EC%9D%B4%EB%8A%94-http-methods&quot; aria-label=&quot;자주 쓰이는 http methods permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자주 쓰이는 HTTP Methods&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;GET : 데이터를 서버로부터 받아만 올 때 (❌생성, 수정, 삭제❌) _유저 정보, 검색 정보 등&lt;/li&gt;
+&lt;li&gt;POST : 데이터 생성, 수정 등 변화를 줄 때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;알고있으면-좋은-http-methods&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%95%8C%EA%B3%A0%EC%9E%88%EC%9C%BC%EB%A9%B4-%EC%A2%8B%EC%9D%80-http-methods&quot; aria-label=&quot;알고있으면 좋은 http methods permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;알고있으면 좋은 HTTP Methods&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;OPTIONS : 어떤 Method를 요청 가능한지 확인할 때
+&lt;del&gt;- PUT : POST로 통일해서 사용하는 추세&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;DELETE : 삭제할 때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;자주-쓰이는-http-status-code&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%90%EC%A3%BC-%EC%93%B0%EC%9D%B4%EB%8A%94-http-status-code&quot; aria-label=&quot;자주 쓰이는 http status code permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;자주 쓰이는 HTTP Status Code&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;200 OK&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;301 Moved Permanently&lt;/strong&gt; : 주소가 바뀌었을 때
+&lt;code class=&quot;language-text&quot;&gt;HTTP/1.1 301 Moved Permanently&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Location: http://www.example.org/index.asp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;400 Bad Request&lt;/strong&gt; : Front에서 요청을 잘못줬을 때, 데이터 형식이 잘못 됐거나!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;401 Unauthorized&lt;/strong&gt; : 비밀번호 잘못입력, 로그인 X&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;403 Fobidden&lt;/strong&gt; : 로그인 O, 권한 X&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;404 Not Found&lt;/strong&gt; : HOST는 맞지만 TARGET이 없을 때&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;500 Internal Sever Error&lt;/strong&gt; : Backend 잘못😫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;➕endpoint : 기능을 구현하는 함수를 원격으로 호출해서 사용할 수 있게 해주는 것.&lt;/p&gt;
+&lt;p&gt;참고 및 출처 : 위코드 은우님 HTTP 세션&lt;/p&gt;</content:encoded></item><item><title><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></title><description><![CDATA[인증(Authentication) & 인가(Authorization)-2]]></description><link>https://k904808.github.io//posts/2020_02_14</link><guid isPermaLink="false">https://k904808.github.io//posts/2020_02_14</guid><pubDate>Fri, 14 Feb 2020 20:43:51 GMT</pubDate><content:encoded>&lt;p&gt;JWT(JSON Web Tokens)
 유저가 로그인에 성공하면 access token 이라는 암호화된 유저 정보를 첨부해서 request를 보낸다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HTTP/1.1 200 OK
 Content-Type: application/json
