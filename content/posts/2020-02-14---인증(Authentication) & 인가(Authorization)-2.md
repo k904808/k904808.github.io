@@ -1,7 +1,7 @@
 ---
 title: 인증(Authentication) & 인가(Authorization)-2
 
-date: "2020-02-1T20:43:51.169Z"
+date: "2020-02-14T20:43:51.169Z"
 template: "post"
 draft: false
 slug: "2020_02_14"
